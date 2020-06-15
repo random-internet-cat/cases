@@ -22,7 +22,7 @@ def generate_index(case_list):
     return output
 
 def case_text_of(case_name):
-    with open(os.path.join(cases_dir_path, case_name)) as case_file:
+    with open(os.path.join(cases_dir_path, case_name), encoding="utf-8",errors="replace") as case_file:
         return case_file.read()
 
 def get_case_name_list():
