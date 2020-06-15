@@ -33,7 +33,7 @@ def generate_case_raw_text(case_list, case_index):
     case_name = case_list[case_index]
     case_text = case_text_of(case_name)
     
-    case_raw_text_header="---\ntitle: CFJ {0} (raw)\npermalink:/raw/{0}\n---\n<html><body><pre>".format(case_name)
+    case_raw_text_header="---\ntitle: CFJ {0} (raw)\npermalink: /raw/{0}\n---\n\n<!DOCTYPE html>\n<html><body><pre>".format(case_name)
     case_raw_text_footer="</pre></body></html>"
 
     return case_raw_text_header + case_text + case_raw_text_footer
