@@ -38,7 +38,7 @@ jobs:
       - name: Fetch generated cases
         uses: actions/download-artifact@v2
         with:
-          name: generated
+          name: generated_cases
           path: artifacts/generated
       
       - name: Copy generated files to generation dir
