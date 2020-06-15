@@ -4,6 +4,9 @@ import shutil
 cases_dir_path = "cases"
 case_list_path = "out.csv"
 
+generic_raw_text_header = "<!-- {% raw %} -->"
+generic_raw_text_footer = "<!-- {% endraw %} -->"
+
 def format_index_single_case(case_name):
     return "* CFJ {0}: [html](cases/{0}), [raw](cases/raw/{0})\n".format(case_name)
 
@@ -33,8 +36,8 @@ def generate_case_raw_text(case_list, case_index):
     case_name = case_list[case_index]
     case_text = case_text_of(case_name)
     
-    case_raw_text_header="---\ntitle: CFJ {0} (raw)\npermalink: /raw/{0}\n---\n\n<!DOCTYPE html>\n<html><body><pre>".format(case_name)
-    case_raw_text_footer="</pre></body></html>"
+    case_raw_text_header = "---\ntitle: CFJ {0} (raw)\npermalink: /raw/{0}\n---\n\n<!DOCTYPE html>\n<html><body><pre>".format(case_name) + generic_raw_text_header
+    case_raw_text_footer = generic_raw_text_footer + "</pre></body></html>"
 
     return case_raw_text_header + case_text + case_raw_text_footer
     
@@ -90,9 +93,9 @@ td a{
          <td><a href=\"./?{0}\"><b>CFJ {0}</b></a></td>
          <td class=\"next\"><a href=\"./{2}\"><b>{2}&nbsp;&rarr;</b></a></td>
          <td class=\"text\"><a href=\"./raw/{0}\">text</a></td>
-         </tr></table><pre>\n""".format(case_name, previous_case_name, next_case_name)
+         </tr></table><pre>\n""".format(case_name, previous_case_name, next_case_name) + generic_raw_text_header
     
-    case_html_footer = "</pre></body></html>"
+    case_html_footer = generic_raw_text_footer + "</pre></body></html>"
 
     return case_html_header + case_text_of(case_name) + case_html_footer
 
