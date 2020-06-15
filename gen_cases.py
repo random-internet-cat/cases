@@ -86,9 +86,9 @@ td a{
          <body>
          <table><tr>""" + """
          <td class=\"indx\"><a href=\"./#{2}\">Index</a></td>
-         <td class=\"prev\"><a href=\"./{1}.html\"><b>&larr;&nbsp;{1}</b></a></td>
+         <td class=\"prev\"><a href=\"./{1}\"><b>&larr;&nbsp;{1}</b></a></td>
          <td><a href=\"./?{0}\"><b>CFJ {0}</b></a></td>
-         <td class=\"next\"><a href=\"./{2}.html\"><b>{2}&nbsp;&rarr;</b></a></td>
+         <td class=\"next\"><a href=\"./{2}\"><b>{2}&nbsp;&rarr;</b></a></td>
          <td class=\"text\"><a href=\"./raw/{0}\">text</a></td>
          </tr></table><pre>\n""".format(case_name, previous_case_name, next_case_name)
     
