@@ -22,7 +22,7 @@ jobs:
       - run: python gen_cases.py
         name: Generate cases in generated dir
       
-      - name: Upload fat jar
+      - name: Upload generated cases
         uses: actions/upload-artifact@v2
         with:
           name: generated_cases
