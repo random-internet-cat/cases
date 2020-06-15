@@ -117,7 +117,7 @@ os.makedirs(output_html_cases_path, exist_ok=True)
 output_raw_cases_path = os.path.join(output_dir_path, "cases", "raw")
 os.makedirs(output_raw_cases_path, exist_ok=True)
 
-for case_index in range(0, 10):
+for case_index in range(0, len(case_name_list)):
     case_name = case_name_list[case_index]
     case_html = generate_case_html(case_name_list, case_index)
     case_raw = generate_case_raw_text(case_name_list, case_index)
