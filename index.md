@@ -1,0 +1,11 @@
+# Test CFJ archive
+* CFJ 3847: [html](3847), [raw](raw/3847)
+* CFJ 3846: [html](3846), [raw](raw/3846)
+* CFJ 3845: [html](3845), [raw](raw/3845)
+* CFJ 3844: [html](3844), [raw](raw/3844)
+* CFJ 3843: [html](3843), [raw](raw/3843)
+* CFJ 3842: [html](3842), [raw](raw/3842)
+* CFJ 3841: [html](3841), [raw](raw/3841)
+* CFJ 3840: [html](3840), [raw](raw/3840)
+* CFJ 3839: [html](3839), [raw](raw/3839)
+* CFJ 3838: [html](3838), [raw](raw/3838)
