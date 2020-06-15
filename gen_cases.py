@@ -29,6 +29,16 @@ def get_case_name_list():
     with open(case_list_path) as case_list_file:
         return [case for case in [case.strip() for case in case_list_file.read().split('\n')] if case != ""]
 
+def generate_case_raw_text(case_list, case_index):
+    case_name = case_list[case_index]
+    case_text = case_text_of(case_name)
+    
+    case_raw_text_header="---\ntitle: CFJ {0} (raw)\npermalink:/raw/{0}\n---\n<html><body><pre>".format(case_name)
+    case_raw_text_footer="</pre></body></html>"
+
+    return case_raw_text_header + case_text + case_raw_text_footer
+    
+
 def generate_case_html(case_list, case_index):
     case_name = case_list[case_index]
     
@@ -38,7 +48,7 @@ def generate_case_html(case_list, case_index):
     next_case_index = max(0, case_index - 1)
     next_case_name = case_list[next_case_index]
 
-    case_html_header = "---\ntitle: CFJ {0}\npermalink: /{0}\n---".format(case_name) + """
+    case_html_header = "---\ntitle: CFJ {0}\npermalink: /{0}\n---\n".format(case_name) + """
 <!DOCTYPE html>
 <html><head><title>CFJ {0}</title>
         <style>
@@ -102,15 +112,20 @@ open(header_path, "w").write(generate_index(case_name_list))
 # shutil.copytree(cases_dir_path, output_raw_cases_path, dirs_exist_ok=True)
 
 output_html_cases_path = os.path.join(output_dir_path, "cases")
+os.makedirs(output_html_cases_path, exist_ok=True)
+
+output_raw_cases_path = os.path.join(output_dir_path, "cases", "raw")
+os.makedirs(output_raw_cases_path, exist_ok=True)
 
 for case_index in range(0, 10):
-    # print(case_name_list)
-    # print(case_name_list[0])
-    # print(case_text_of(case_name_list[0]))
-    
     case_name = case_name_list[case_index]
     case_html = generate_case_html(case_name_list, case_index)
+    case_raw = generate_case_raw_text(case_name_list, case_index)
     case_html_out_path = os.path.join(output_html_cases_path, case_name + ".html")
+    case_raw_out_path = os.path.join(output_raw_cases_path, case_name + ".html")
 
     with open(case_html_out_path, "w") as case_html_out_file:
         case_html_out_file.write(case_html)
+
+    with open(case_raw_out_path, "w") as case_raw_out_file:
+        case_raw_out_file.write(case_raw)
