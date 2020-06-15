@@ -38,7 +38,7 @@ def generate_case_html(case_list, case_index):
     next_case_index = max(0, case_index - 1)
     next_case_name = case_list[next_case_index]
 
-    case_html_header = """
+    case_html_header = "---\ntitle: CFJ {0}\npermalink: /{0}".format(case_name) + """
 <!DOCTYPE html>
 <html><head><title>CFJ {0}</title>
         <style>
