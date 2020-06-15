@@ -48,7 +48,7 @@ jobs:
         uses: crazy-max/ghaction-github-pages@v2.0.0
         with:
           target_branch: gh-pages
-          keep_history: true
+          keep_history: false
           allow_empty_commit: false
           build_dir: "generation/gh-pages"
           author: "ci-build <ci-build@agoranomic.org>"
