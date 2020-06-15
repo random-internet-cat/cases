@@ -8,7 +8,7 @@ generic_raw_text_header = "<!-- {% raw %} -->"
 generic_raw_text_footer = "<!-- {% endraw %} -->"
 
 def format_index_single_case(case_name):
-    return "* CFJ {0}: [html](cases/{0}), [raw](cases/raw/{0})\n".format(case_name)
+    return "* CFJ {0}: [html]({0}), [raw](raw/{0})\n".format(case_name)
 
 def generate_index(case_list):
     output_header = "# Test CFJ archive\n"
