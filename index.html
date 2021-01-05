@@ -49,7 +49,7 @@
                     const urlParts = currentUrl.split('?');
                     const caseNum = urlParts[urlParts.length - 1];
                     const casePrevNum = 0;
-                    const caseNextNum = 0;
+                    const caseNextNum = 9999;
 
                     const caseContentUrl = GITHUB_RAW_CASE_BASE + caseNum;
                     fetch(caseContentUrl).then(response => {
@@ -59,9 +59,9 @@
                                 `
                                  <table><tr>
                                  <td class=\"indx\"><a href=\"./` + caseNum + `\">Index</a></td>
-                                 <td class=\"prev\"><a href=\"./?` + casePrevNum + `\"><b>&larr;&nbsp;{1}</b></a></td>
+                                 <td class=\"prev\"><a href=\"./?` + casePrevNum + `\"><b>&larr;&nbsp;` + casePrevNum + `</b></a></td>
                                  <td><a href=\"./?` + caseNum + `\"><b>CFJ ` + caseNum +  `</b></a></td>
-                                 <td class=\"next\"><a href=\"./?` + caseNextNum + `\"><b>{2}&nbsp;&rarr;</b></a></td>
+                                 <td class=\"next\"><a href=\"./?` + caseNextNum + `\"><b>` + caseNextNum + `&nbsp;&rarr;</b></a></td>
                                  <td class=\"text\"><a href=\"` + caseContentUrl + `\">text</a></td>
                                  </tr></table><pre>` + responseText + `</pre>`;
                         });
